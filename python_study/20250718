@@ -1,0 +1,32 @@
+#SQL 
+---
+```sql
+CREATE database IF NOT EXISTS fisa;
+-- DROP database IF EXISTS fisa;
+
+# MySQL에서도 컬럼명, 테이블명은 snake_case, DB명은 PascalCase, snake_case
+CREATE database IF NOT EXISTS mywork; 
+USE mywork; -- 커서를 mywork에 위치시킴
+DROP TABLE IF EXISTS students;
+CREATE TABLE students (
+    id TINYINT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(10) NOT NULL,
+    gender ENUM('man', 'woman') NOT NULL,
+    birth DATE NOT NULL,
+    english TINYINT NOT NULL,
+    math TINYINT NOT NULL,
+    korean TINYINT NOT NULL,
+    PRIMARY KEY (id)
+)  ENGINE=INNODB DEFAULT CHARSET=UTF8MB4;
+```
+
+클라우드 기반 데이터 웨어하우스(DW)는 기업 데이터를 통합해 의사결정을 지원하는 시스템으로, 다양한 데이터 유형과 실시간 데이터 제공 수요, '
+그리고 클라우드 전환 확산으로 인해 중요성이 커지고 있다. 기존 온프레미스 DW는 자원 확장과 시스템 연계에 한계가 있어, 
+아마존 Redshift, 구글 BigQuery 같은 클라우드 DW 서비스가 대안으로 부상하고 있으며, 2025년 시장 규모는 109억 달러로 성장할 전망이다. 
+클라우드 DW는 컴퓨팅과 스토리지를 분리해 필요할 때만 자원을 사용하고 스케일링할 수 있어 비용 효율성이 높으며,
+Redshift의 분산 노드 구조나 BigQuery의 서버리스 확장성으로 대규모 데이터를 빠르게 병렬 처리할 수 있다. 스토리지도 데이터 증가에 따라 즉시 확장 가능하고, 
+다양한 데이터 처리 도구와 AI·BI 서비스와 연계해 활용성을 극대화한다. 또한 데이터 레이크와 DW를 결합한 데이터 레이크하우스 아키텍처,
+AWS Glue나 BigQuery Federation Query 등을 통한 외부 데이터 연계로 시스템 간 이중 데이터 이동 없이 일관된 분석이 가능하다. 
+
+다만, 클라우드 DW 도입 시 데이터 보안과 암호화, 거버넌스, 멀티 클라우드 환경 통합, 비용 최적화, 클라우드 종속성 문제 등을 사전에 검토해야 하며, 
+이러한 고려 사항을 극복할 경우 기업의 데이터 활용 가치는 크게 향상되어 비즈니스 혁신을 가속화할 수 있다.
